@@ -1,16 +1,24 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import * as cdk from 'aws-cdk-lib';
+import * as s3 from 'aws-cdk-lib/aws-s3';
+import * as s3Deploy from 'aws-cdk-lib/aws-s3-deployment';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-export class TodoApplicationStack extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+export class TodoApplicationStack extends cdk.Stack {
+  constructor( scope: Construct, id: string, props?: cdk.StackProps ) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const frontendBucket = new s3.Bucket(this, 'TodoApplicationFrontend', {
+      websiteIndexDocument: 'index.html',
+      publicReadAccess: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'TodoApplicationQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const bucketDeployment = new s3Deploy.BucketDeployment(this, 'DeployTodoApplicationFrontend', {
+      sources: [s3Deploy.Source.asset(`application/frontend/dist/todo-application`)],
+      destinationBucket: frontendBucket
+    });
+    bucketDeployment.node.addDependency(frontendBucket);
   }
 }
+
