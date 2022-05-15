@@ -1,6 +1,7 @@
 {
   "name": "todo_application",
   "version": "0.1.0",
+  "license": "MIT",
   "bin": {
     "todo_application": "bin/todo_application.js"
   },
