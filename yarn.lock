@@ -116,6 +116,21 @@
     "@aws-cdk/core" "1.156.1"
     constructs "^3.3.69"
 
+"@aws-cdk/aws-dynamodb@^1.156.1":
+  version "1.156.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-dynamodb/-/aws-dynamodb-1.156.1.tgz#417a4567ed1bfac044b92cdab409d44f14b16d72"
+  integrity sha512-rRVDdYW++aBDXYOUa7v3bkHnyOIe/b8uZ7bfHUAD3iMp+hMMh9jc/k/E1c2NliAUS952K9IMVmLXhxP/0MlWXA==
+  dependencies:
+    "@aws-cdk/aws-applicationautoscaling" "1.156.1"
+    "@aws-cdk/aws-cloudwatch" "1.156.1"
+    "@aws-cdk/aws-iam" "1.156.1"
+    "@aws-cdk/aws-kinesis" "1.156.1"
+    "@aws-cdk/aws-kms" "1.156.1"
+    "@aws-cdk/aws-lambda" "1.156.1"
+    "@aws-cdk/core" "1.156.1"
+    "@aws-cdk/custom-resources" "1.156.1"
+    constructs "^3.3.69"
+
 "@aws-cdk/aws-ec2@1.156.1":
   version "1.156.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ec2/-/aws-ec2-1.156.1.tgz#37a8d1988de13a6df977b94d6e817589352ca28c"
@@ -188,6 +203,18 @@
     "@aws-cdk/core" "1.156.1"
     "@aws-cdk/cx-api" "1.156.1"
     "@aws-cdk/region-info" "1.156.1"
+    constructs "^3.3.69"
+
+"@aws-cdk/aws-kinesis@1.156.1":
+  version "1.156.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-kinesis/-/aws-kinesis-1.156.1.tgz#6daf81dd6861773ea3c702cf5a12503804edcbd2"
+  integrity sha512-bmM4/TagRF5CgoFKs2/dnvcoVT2VaelIFOc++NZ538xbHRPtFS0LSrBq1kePV9xqgFSS0G8we5xA5HljqsrrMQ==
+  dependencies:
+    "@aws-cdk/aws-cloudwatch" "1.156.1"
+    "@aws-cdk/aws-iam" "1.156.1"
+    "@aws-cdk/aws-kms" "1.156.1"
+    "@aws-cdk/aws-logs" "1.156.1"
+    "@aws-cdk/core" "1.156.1"
     constructs "^3.3.69"
 
 "@aws-cdk/aws-kms@1.156.1":
